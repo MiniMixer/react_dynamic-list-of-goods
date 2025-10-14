@@ -1,1 +1,12 @@
 // styles go here
+li {
+  &.red{
+    color: red;
+  }
+  &.green{
+    color: green;
+  }
+  &.blue{
+    color: blue;
+  }
+}
