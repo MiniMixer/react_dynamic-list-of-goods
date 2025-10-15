@@ -11,21 +11,27 @@ export const App: React.FC = () => {
   const [goodsFromServer, setGoodsFromServer] = useState<Good[]>([]);
 
   function handleGetAll() {
-    getAll().then((goods: Good[]) => {
-      setGoodsFromServer(goods);
-    });
+    getAll()
+      .then((goods: Good[]) => {
+        setGoodsFromServer(goods);
+      })
+      .catch(error => setGoodsFromServer(error));
   }
 
   function handleGet5First() {
-    get5First().then((goods: Good[]) => {
-      setGoodsFromServer(goods);
-    });
+    get5First()
+      .then((goods: Good[]) => {
+        setGoodsFromServer(goods);
+      })
+      .catch(error => setGoodsFromServer(error));
   }
 
   function handleGetRedGoods() {
-    getRedGoods().then((goods: Good[]) => {
-      setGoodsFromServer(goods);
-    });
+    getRedGoods()
+      .then((goods: Good[]) => {
+        setGoodsFromServer(goods);
+      })
+      .catch(error => setGoodsFromServer(error));
   }
 
   return (
