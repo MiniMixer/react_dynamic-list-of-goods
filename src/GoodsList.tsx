@@ -4,14 +4,19 @@ import { Good } from './types/Good';
 
 type Props = {
   goods: Good[];
+  errorMessage: string | null;
 };
 
-export const GoodsList: React.FC<Props> = ({ goods }) => (
-  <ul>
-    {goods.map(good => (
-      <li key={good.id} data-cy="good" className={good.color}>
-        {good.name}
-      </li>
-    ))}
-  </ul>
+export const GoodsList: React.FC<Props> = ({ goods, errorMessage }) => (
+  <>
+    <ul>
+      {goods.map(good => (
+        <li key={good.id} data-cy="good" className={good.color}>
+          {good.name}
+        </li>
+      ))}
+    </ul>
+
+    <h2 className="error">{errorMessage}</h2>
+  </>
 );
