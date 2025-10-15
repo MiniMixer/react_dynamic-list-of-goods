@@ -7,7 +7,7 @@ type Props = {
   errorMessage: string | null;
 };
 
-export const GoodsList: React.FC<Props> = ({ goods, errorMessage }) => (
+const GoodsListComponent: React.FC<Props> = ({ goods, errorMessage }) => (
   <>
     <ul>
       {goods.map(good => (
@@ -20,3 +20,5 @@ export const GoodsList: React.FC<Props> = ({ goods, errorMessage }) => (
     <h2 className="error">{errorMessage}</h2>
   </>
 );
+
+export const GoodsList = React.memo(GoodsListComponent);
